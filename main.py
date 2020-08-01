@@ -9,22 +9,22 @@ import multiprocessing
 import threading
 import concurrent
 
-#BOT_OWNER_ROLE = '' # change to what you need
+BOT_OWNER_ROLE = 'Runner' # change to what you need
 #BOT_OWNER_ROLE_ID = "583573353978265610" 
   
  
 
  
 oot_channel_id_list = [
-'708939235259973652','709419284975059014'
+'732405414901317752'
 ]
 
 
 answer_pattern = re.compile(r'(not|n)?([1-3]{1})(\?)?(cnf)?(\?)?$', re.IGNORECASE)
 
-apgscore = 60
-nomarkscore = 30
-markscore = 15
+apgscore = 90
+nomarkscore = 40
+markscore = 20
 
 async def update_scores(content, answer_scores):
     global answer_pattern
@@ -126,14 +126,14 @@ class Bot(discord.Client):
         self.answer_scores = answer_scores
 
         # embed creation
-        self.embed=discord.Embed(title="**__LOCO TRIVIA__**",color=0x0ff14)
+        self.embed=discord.Embed(title="**__VEDANTU TRIVIA__**",color=0x0ff14)
         self.embed.add_field(name=f"**Aɴsᴡᴇʀ 1**", value="0.0 ", inline=True)
         self.embed.add_field(name=f"**Aɴsᴡᴇʀ 2**", value="0.0 ", inline=True)
         self.embed.add_field(name=f"**Aɴsᴡᴇʀ 3**", value="0.0 ", inline=True)
         self.embed.add_field(name=f"**__BEST ANSWER..!__**", value="0.0", inline=True)
         self.embed.add_field(name=f"**___SUGGEST ANSWER___**", value="0.0", inline=True)
         self.embed.set_thumbnail(url="https://cdn.discordapp.com/attachments/583675981466828801/685776310525755392/unnamed.png")
-        self.embed.set_footer(text="Loco Answer | HACK么7676™ ||")
+        self.embed.set_footer(text="Loco Answer | R€FL€X ॥乛ᏰᏒᎧᏖᏂᏋᏒᏕ8035™ ||")
    
         
 
@@ -198,7 +198,7 @@ class Bot(discord.Client):
             if answer == 3:
                 three_cross = ":x:"
             
-        self.embed=discord.Embed(title=f"**__LOCO TRIVIA__**\n\n**__Counter Answer__**\n**Answer :one: :- {lst_scores[0]}{one_check}\nAnswer :two: :- {lst_scores[1]}{two_check}\nAnswer :three: :- {lst_scores[2]}{three_check}**\n\n**__Crowd Result__** \n**Answer :- {one_check}{two_check}{three_check}\n__Crowd Wrong__** \n**Answer :- {wrong_answer}**",color=0x0ff14)
+        self.embed=discord.Embed(title=f"**__VEDANTU TRIVIA__**\n\n**__Counter Answer__**\n**Answer :one: :- {lst_scores[0]}{one_check}\nAnswer :two: :- {lst_scores[1]}{two_check}\nAnswer :three: :- {lst_scores[2]}{three_check}**\n\n**__Crowd Result__** \n**Answer :- {one_check}{two_check}{three_check}\n__Crowd Wrong__** \n**Answer :- {wrong_answer}**",color=0x0ff14)
         self.embed.set_thumbnail(url="https://cdn.discordapp.com/attachments/583675981466828801/685776310525755392/unnamed.png")
         self.embed.set_image(url="https://cdn.discordapp.com/attachments/625229957135597578/625246299947794432/SAVE_20190922_135432.gif")
         self.embed.set_footer(text="LOCO ANSWER | BOT")
@@ -266,7 +266,7 @@ def bot_with_cyclic_update_process(update_event, answer_scores):
     upd_thread.start()
 
     loop = asyncio.get_event_loop()
-    loop.create_task(bot.start('NzA5Nzg3MjA1MTg2NDg2MzEy.Xrq_Bg.52OLHukHd4-MFHYWLdavvDC_jHw'))
+    loop.create_task(bot.start('NzA5Nzg3MjA1MTg2NDg2MzEy.Xrq_Bg.52OLHukHd4-MFHYWLdavvDC_jHw'))BOT TOKEN HERE
     loop.run_forever()
 
 
@@ -275,7 +275,7 @@ def selfbot_process(update_event, answer_scores):
     selfbot = SelfBot(update_event, answer_scores)
 
     loop = asyncio.get_event_loop()
-    loop.create_task(selfbot.start('NzAyNDk4MTc1OTM1ODQwMzE2.XqQvjw.VY9cwAvxn-9dgy8MtEM8PfebLwU',
+    loop.create_task(selfbot.start('NzAyNDk4MTc1OTM1ODQwMzE2.XqQvjw.VY9cwAvxn-9dgy8MtEM8PfebLwU',OWN ID TOKEN
                                    bot=False))
     loop.run_forever()
 
