@@ -225,7 +225,7 @@ class Bot(discord.Client):
         if message.author == self.user or message.guild == None:
             return
 
-        if message.content.lower() == "lo":
+        if message.content.lower() == "ve":
             #await message.delete()
            # if BOT_OWNER_ROLE in []:
             self.embed_msg = None
@@ -263,7 +263,7 @@ def bot_with_cyclic_update_process(update_event, answer_scores):
     bot = Bot(answer_scores)
 
     upd_thread = threading.Thread(target=cyclic_update, args=(bot, update_event))
-    upd_thread.start(NzAzNTkzNzIyNjcxMjY3ODgx.XqQ2tw.YzaejXcA5iInKcMWUB7R3p6MlP4'))
+    upd_thread.start('NzAzNTkzNzIyNjcxMjY3ODgx.XqQ2tw.YzaejXcA5iInKcMWUB7R3p6MlP4'))
 
     loop = asyncio.get_event_loop()
     loop.create_task(bot.start()BOT TOKEN HERE
